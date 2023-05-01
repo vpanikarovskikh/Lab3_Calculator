@@ -95,8 +95,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.buttonPercent.setOnClickListener {
-            binding.resultField.text = (binding.resultField.text.toString().toFloat() / 100).toString()
-            binding.middleField.text = (binding.middleField.text.toString().toFloat() / 100).toString()
+            val rFi = binding.resultField.text.toString().toDouble() / (100).toFloat()
+            val mFi = binding.middleField.text.toString().toDouble() / (100).toFloat()
+            binding.resultField.text = rFi.toFloat().toString()
+            binding.middleField.text = mFi.toFloat().toString()
         }
         binding.buttonAc.setOnClickListener {
             changeColorPlusBack()
@@ -121,7 +123,6 @@ class MainActivity : AppCompatActivity() {
             val ex = ExpressionBuilder(binding.middleField.text.toString()).build()
             val result = ex.evaluate()
             val longRes = result.toLong()
-            println(result.toString())
             if (result == longRes.toDouble()){
                 binding.resultField.text = ""
                 binding.middleField.text = ""
