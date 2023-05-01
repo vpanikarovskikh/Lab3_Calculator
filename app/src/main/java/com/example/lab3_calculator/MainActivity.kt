@@ -100,6 +100,7 @@ class MainActivity : AppCompatActivity() {
             binding.resultField.text = rFi.toFloat().toString()
             binding.middleField.text = mFi.toFloat().toString()
         }
+
         binding.buttonAc.setOnClickListener {
             changeColorPlusBack()
             changeColorMinusBack()
